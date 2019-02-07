@@ -1,4 +1,8 @@
-# sign-up
+Figma reference: https://www.figma.com/file/fmX7iZZSHC2CcASSTuPlYFQS/Sign-Up?node-id=17%3A3
+
+Collect UI challenge: collectui.com/challenges/sign-up
+
+# Sign Up
 
 ## Project setup
 ```

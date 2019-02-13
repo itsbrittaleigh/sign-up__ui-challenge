@@ -1,5 +1,5 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20.01">
+  <svg :class="className" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20.01">
     <title>Dog by Creative Stall from the Noun Project</title>
     <g id="Layer_2" data-name="Layer 2">
       <g id="Layer_1-2" data-name="Layer 1">
@@ -21,11 +21,15 @@
 
 <script>
 export default {
-  name: 'dogIcon',
+  name: 'DogIcon',
   props: {
     color: {
       type: String,
       default: '#575859',
+    },
+    className: {
+      type: String,
+      default: '',
     },
   },
   data() {

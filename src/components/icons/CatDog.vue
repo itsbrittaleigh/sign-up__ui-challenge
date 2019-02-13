@@ -1,5 +1,5 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.82 25.27">
+  <svg :class="className" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.82 25.27">
     <title>Pets by Amelia Wattenberger from the Noun Project</title>
     <g id="Layer_2" data-name="Layer 2">
       <g id="Layer_1-2" data-name="Layer 1">
@@ -52,7 +52,7 @@
 
 <script>
 export default {
-  name: 'catDogIcon',
+  name: 'CatDogIcon',
   props: {
     catColor: {
       type: String,
@@ -61,6 +61,10 @@ export default {
     dogColor: {
       type: String,
       default: '#53D8FB',
+    },
+    className: {
+      type: String,
+      default: '',
     },
   },
   data() {

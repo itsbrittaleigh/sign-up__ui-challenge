@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('~/static/source-sans-pro/SourceSansPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('~/static/source-sans-pro/SourceSansPro-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('~/static/source-sans-pro/SourceSansPro-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('~/static/source-sans-pro/SourceSansPro-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+html,
+body {
+  font-family: 'Source Sans Pro', 'Tahoma', sans-serif;
+}

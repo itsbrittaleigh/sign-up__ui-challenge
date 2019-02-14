@@ -1,5 +1,10 @@
 <template>
-  <button :type="type">{{ text }}</button>
+  <button
+    class="Button"
+    :type="type"
+  >
+    {{ text }}
+  </button>
 </template>
 
 <script>
@@ -17,3 +22,22 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.Button {
+  background: var(--pink);
+  border: 0;
+  border-radius: 5px;
+  color: var(--white);
+  font-weight: bold;
+  outline: 0;
+  padding: 12px 20px;
+  text-transform: lowercase;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+}
+
+.Button:hover {
+  background: var(--dark-pink);
+}
+</style>

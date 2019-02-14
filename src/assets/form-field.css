@@ -29,6 +29,10 @@
   width: 100%;
 }
 
+.FormField__input:hover {
+  opacity: 0.15;
+}
+
 .FormField:focus-within .FormField__input,
 .FormField--filled .FormField__input {
   opacity: 1;

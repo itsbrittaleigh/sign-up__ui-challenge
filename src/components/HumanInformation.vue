@@ -6,17 +6,20 @@
       :is="`${field.component}-form-field`"
       :field="field"
     />
+    <Button :style="{ marginTop: '43px' }" />
   </section>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
+import Button from './form-fields/Button.vue';
 import ImageFormField from './form-fields/Image.vue';
 import InputFormField from './form-fields/Input.vue';
 
 export default {
   name: 'HumanInformation',
   components: {
+    Button,
     ImageFormField,
     InputFormField,
   },

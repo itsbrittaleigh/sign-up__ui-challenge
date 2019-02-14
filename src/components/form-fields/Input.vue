@@ -32,6 +32,4 @@ export default {
 };
 </script>
 
-<style>
-@import '../../assets/form-field.css';
-</style>
+<style scoped src="../../assets/form-field.css"></style>

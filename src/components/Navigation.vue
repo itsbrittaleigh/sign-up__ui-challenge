@@ -2,21 +2,39 @@
   <nav class="Navigation">
     <div class="Wrapper">
       <ul class="Navigation__list">
-        <li class="Navigation__list-item">
+        <li
+          :class="
+            `Navigation__list-item
+            ${activeSection === 'humanInformation' ? 'Navigation__list-item--active' : ''}`"
+        >
           <PawPrintIcon
             class-name="Navigation__list-item-icon"
             color="#FFFFFF"
           />
           <span class="Navigation__list-item-content">Human information</span>
         </li>
-        <li class="Navigation__list-item">
+        <span class="Navigation__dot"></span>
+        <span class="Navigation__dot"></span>
+        <span class="Navigation__dot"></span>
+        <li
+          :class="
+            `Navigation__list-item
+            ${activeSection === 'petInformation' ? 'Navigation__list-item--active' : ''}`"
+        >
           <PawPrintIcon
             class-name="Navigation__list-item-icon"
             color="#FFFFFF"
           />
           <span class="Navigation__list-item-content">Pet information</span>
         </li>
-        <li class="Navigation__list-item">
+        <span class="Navigation__dot"></span>
+        <span class="Navigation__dot"></span>
+        <span class="Navigation__dot"></span>
+        <li
+          :class="
+            `Navigation__list-item
+            ${activeSection === 'review' ? 'Navigation__list-item--active' : ''}`"
+        >
           <PawPrintIcon
             class-name="Navigation__list-item-icon"
             color="#FFFFFF"
@@ -33,6 +51,12 @@ import PawPrintIcon from './icons/PawPrint.vue';
 
 export default {
   name: 'Navigation',
+  props: {
+    activeSection: {
+      type: String,
+      required: true,
+    },
+  },
   components: {
     PawPrintIcon,
   },
@@ -42,19 +66,24 @@ export default {
 <style>
 .Navigation__list {
   margin: 0;
-  padding: 30px 0 60px;
+  padding: 30px 0;
   list-style-type: none;
 }
 
 .Navigation__list-item {
-  display: flex;
   align-items: center;
-  margin-bottom: 45px;
+  display: flex;
+  margin: 13px 0;
+  opacity: 0.5;
   text-transform: lowercase;
 }
 
-.Navigation__list-item:last-of-type {
-  margin-bottom: 0;
+.Navigation__list-item--active {
+  opacity: 1;
+}
+
+.Navigation__list-item:first-of-type {
+  margin-top: 0;
 }
 
 .Navigation__list-item-icon {
@@ -65,5 +94,19 @@ export default {
 .Navigation__list-item-content {
   color: var(--white);
   margin-left: 15px;
+}
+
+.Navigation__dot {
+  background: var(--white);
+  border-radius: 5px;
+  display: block;
+  height: 5px;
+  margin-left: 13px;
+  opacity: 0.5;
+  width: 5px;
+}
+
+.Navigation__dot:nth-child(2n) {
+  margin: 8px 0 8px 13px;
 }
 </style>

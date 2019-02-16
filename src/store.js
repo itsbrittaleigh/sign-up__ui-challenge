@@ -3,6 +3,13 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
+const sections = [
+  'humanInformation',
+  'petInformation',
+  'review',
+  'confirmation',
+];
+
 export default new Vuex.Store({
   state: {
     humanFields: [
@@ -105,14 +112,24 @@ export default new Vuex.Store({
         className: '',
       },
     ],
+    sections,
+    activeSection: sections[1],
   },
   getters: {
     humanFields: state => state.humanFields,
-  },
-  mutations: {
-
+    petFields: state => state.petFields,
+    sections: state => state.sections,
+    activeSection: state => state.activeSection,
   },
   actions: {
-
+    setActiveSection({ commit }, section) {
+      commit('setActiveSection', section);
+    },
+  },
+  mutations: {
+    setActiveSection(state, section) {
+      const localState = state;
+      localState.activeSection = section;
+    },
   },
 });

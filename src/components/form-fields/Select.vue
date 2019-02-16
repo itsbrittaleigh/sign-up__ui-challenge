@@ -1,13 +1,23 @@
 <template>
   <div class="FormField">
-    <label :for="name">{{ field.label }}</label>
+    <label
+      :for="field.name"
+      class="FormField__label"
+    >
+      {{ field.label }}
+    </label>
     <select
-      type="email"
       :name="field.name"
       :id="field.name"
       :value="field.value"
     >
-      <option :value="field.option.value">{{ field.option.label }}</option>
+      <option
+        v-for="{ value, label } in field.options"
+        :key="value"
+        :value="value"
+      >
+        {{ label }}
+      </option>
     </select>
     <Error
       v-for="(error, index) in errors"
@@ -27,3 +37,5 @@ export default {
   ],
 };
 </script>
+
+<style scoped src="../../assets/form-field.css"></style>

@@ -3,18 +3,28 @@
     class="App"
     id="app"
   >
-    <Navigation />
+    <Navigation :active-section="activeSection" />
     <div class="Wrapper">
-      <HumanInformation />
-      <PetInformation />
-      <Review />
-      <Confirmation />
+      <HumanInformation
+        v-if="activeSection === 'humanInformation'"
+        @goToNextSection="setActiveSection(sections[1])"
+      />
+      <PetInformation
+        v-if="activeSection === 'petInformation'"
+        @goToNextSection="setActiveSection(sections[2])"
+      />
+      <Review
+        v-if="activeSection === 'review'"
+        @goToNextSection="setActiveSection(sections[3])"
+      />
+      <Confirmation v-if="activeSection === 'confirmation'" />
     </div>
     <Footer />
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex';
 import Confirmation from './components/Confirmation.vue';
 import Footer from './components/Footer.vue';
 import HumanInformation from './components/HumanInformation.vue';
@@ -31,6 +41,17 @@ export default {
     Navigation,
     PetInformation,
     Review,
+  },
+  computed: {
+    ...mapGetters([
+      'sections',
+      'activeSection',
+    ]),
+  },
+  methods: {
+    ...mapActions([
+      'setActiveSection',
+    ]),
   },
 };
 </script>

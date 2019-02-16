@@ -2,6 +2,7 @@
   <button
     class="Button"
     :type="type"
+    @click="emitClicked()"
   >
     {{ text }}
   </button>
@@ -18,6 +19,11 @@ export default {
     type: {
       type: String,
       default: 'button',
+    },
+  },
+  methods: {
+    emitClicked() {
+      this.$emit('clicked');
     },
   },
 };

@@ -6,7 +6,10 @@
       :is="`${field.component}-form-field`"
       :field="field"
     />
-    <Button :style="{ marginTop: '43px' }" />
+    <Button
+      :style="{ marginTop: '43px' }"
+      @clicked="goToNextSection()"
+    />
   </section>
 </template>
 
@@ -27,6 +30,11 @@ export default {
     ...mapGetters([
       'humanFields',
     ]),
+  },
+  methods: {
+    goToNextSection() {
+      this.$emit('goToNextSection');
+    },
   },
 };
 </script>

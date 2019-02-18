@@ -15,7 +15,6 @@
         </li>
         <span class="Navigation__dot"></span>
         <span class="Navigation__dot"></span>
-        <span class="Navigation__dot"></span>
         <li
           :class="
             `Navigation__list-item
@@ -27,7 +26,6 @@
           />
           <span class="Navigation__list-item-content">Pet information</span>
         </li>
-        <span class="Navigation__dot"></span>
         <span class="Navigation__dot"></span>
         <span class="Navigation__dot"></span>
         <li
@@ -101,12 +99,8 @@ export default {
   border-radius: 5px;
   display: block;
   height: 5px;
-  margin-left: 13px;
+  margin: 8px 0 8px 13px;;
   opacity: 0.5;
   width: 5px;
-}
-
-.Navigation__dot:nth-child(2n) {
-  margin: 8px 0 8px 13px;
 }
 </style>

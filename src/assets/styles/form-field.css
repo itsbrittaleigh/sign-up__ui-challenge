@@ -1,0 +1,46 @@
+.FormField {
+  padding-top: 22px;
+  position: relative;
+  width: 100%;
+}
+
+.FormField.is-half {
+  width: calc((100% - 20px) / 2);
+}
+
+.FormField__label {
+  color: var(--white);
+  position: absolute;
+  left: 15px;
+  top: 33px;
+  text-transform: lowercase;
+  transition: top 0.3s ease-in-out,
+    left 0.3s ease-in-out;
+}
+
+.FormField__input {
+  background: #FFFFFF;
+  border: 0;
+  border-radius: 5px;
+  color: var(--dark-gray);
+  opacity: 0.3;
+  padding: 12px 15px;
+  transition: opacity 0.2s ease-in-out;
+  width: 100%;
+}
+
+.FormField__input:hover {
+  opacity: 0.15;
+}
+
+.FormField:focus-within .FormField__input,
+.FormField--filled .FormField__input {
+  opacity: 1;
+}
+
+.FormField:focus-within .FormField__label,
+.FormField--filled .FormField__label {
+  font-size: 14px;
+  left: 0;
+  top: 0;
+}

@@ -3,23 +3,45 @@
     class="App"
     id="app"
   >
-    <Navigation :active-section="activeSection" />
-    <div class="Wrapper">
-      <HumanInformation
-        v-if="activeSection === 'humanInformation'"
-        @goToNextSection="setActiveSection(sections[1])"
-      />
-      <PetInformation
-        v-if="activeSection === 'petInformation'"
-        @goToNextSection="setActiveSection(sections[2])"
-      />
-      <Review
-        v-if="activeSection === 'review'"
-        @goToNextSection="setActiveSection(sections[3])"
-      />
-      <Confirmation v-if="activeSection === 'confirmation'" />
-    </div>
+    <main>
+      <Navigation :active-section="activeSection" />
+      <div class="Wrapper">
+        <HumanInformation
+          v-if="activeSection === 'humanInformation'"
+          @goToNextSection="setActiveSection(sections[1])"
+        />
+        <PetInformation
+          v-if="activeSection === 'petInformation'"
+          @goToNextSection="setActiveSection(sections[2])"
+        />
+        <Review
+          v-if="activeSection === 'review'"
+          @goToNextSection="setActiveSection(sections[3])"
+        />
+        <Confirmation v-if="activeSection === 'confirmation'" />
+      </div>
+    </main>
     <Footer />
+    <div class="Overlay">
+      <img
+        v-if="activeSection === 'humanInformation'"
+        class="Overlay__image"
+        src="./assets/images/white-dog.jpg"
+        alt="Long coated white dog"
+      />
+      <img
+        v-if="activeSection === 'petInformation'"
+        class="Overlay__image"
+        src="./assets/images/calico-cat.jpg"
+        alt="Calico cat standing on grass field"
+      />
+      <img
+        v-if="activeSection === 'review'"
+        class="Overlay__image"
+        src="./assets/images/cat-dog.jpg"
+        alt="White dog and gray cat hugging each other on grass"
+      />
+    </div>
   </div>
 </template>
 
@@ -57,17 +79,43 @@ export default {
 </script>
 
 <style>
-@import url('./assets/normalize.css');
-@import url('./assets/variables.css');
-@import url('./assets/typography.css');
+@import url('./assets/styles/normalize.css');
+@import url('./assets/styles/variables.css');
+@import url('./assets/styles/typography.css');
 
 .App {
   background: var(--blue-gradient);
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  position: relative;
+}
+
+.Overlay {
+  /* TODO: This is adding an extra pixel at the end -- investigate */
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.Overlay__image {
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.07;
+  width: 100%;
 }
 
 .Wrapper {
-  width: calc(100% - 80px);
   margin: 0 auto;
+  width: calc(100% - 80px);
+}
+
+main {
+  flex: 1;
+  margin-bottom: 70px;
 }
 </style>

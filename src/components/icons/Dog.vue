@@ -37,3 +37,9 @@ export default {
   },
 };
 </script>
+
+<style>
+svg {
+  width: 26px;
+}
+</style>

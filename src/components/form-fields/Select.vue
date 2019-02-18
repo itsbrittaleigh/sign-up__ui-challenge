@@ -38,4 +38,4 @@ export default {
 };
 </script>
 
-<style scoped src="../../assets/form-field.css"></style>
+<style scoped src="../../assets/styles/form-field.css"></style>

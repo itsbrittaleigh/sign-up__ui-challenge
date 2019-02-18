@@ -113,7 +113,7 @@ export default new Vuex.Store({
       },
     ],
     sections,
-    activeSection: sections[1],
+    activeSection: sections[0],
   },
   getters: {
     humanFields: state => state.humanFields,

@@ -1,5 +1,5 @@
 <template>
-  <div class="FormField">
+  <div class="FormField FormField--select">
     <label
       :for="field.name"
       class="FormField__label"
@@ -7,14 +7,14 @@
       {{ field.label }}
     </label>
     <select
-      :name="field.name"
-      :id="field.name"
-      :value="field.value"
+      class="FormField__input"
+      v-model="localValue"
     >
+      <option value=""></option>
       <option
-        v-for="{ value, label } in field.options"
-        :key="value"
-        :value="value"
+        v-for="{ name, label } in field.options"
+        :key="name"
+        :value="name"
       >
         {{ label }}
       </option>

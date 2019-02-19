@@ -9,8 +9,6 @@
     <input
       class="FormField__input"
       :type="field.type"
-      :name="field.name"
-      :id="field.name"
       v-model="localValue"
     />
     <Error

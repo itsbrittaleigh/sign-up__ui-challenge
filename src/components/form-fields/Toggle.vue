@@ -13,7 +13,7 @@
 import FieldMixin from '../../mixins/FieldMixin';
 
 export default {
-  name: 'EmailFormField',
+  name: 'ToggleFormField',
   mixins: [
     FieldMixin,
   ],

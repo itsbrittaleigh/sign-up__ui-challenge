@@ -22,7 +22,7 @@ import SelectFormField from './form-fields/Select.vue';
 import ToggleFormField from './form-fields/Toggle.vue';
 
 export default {
-  name: 'HumanInformation',
+  name: 'PetInformation',
   components: {
     Button,
     ImageFormField,

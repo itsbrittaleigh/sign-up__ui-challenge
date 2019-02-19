@@ -83,6 +83,16 @@ export default new Vuex.Store({
         validation: [
           'required',
         ],
+        options: [
+          {
+            label: 'Cat',
+            name: 'cat',
+          },
+          {
+            label: 'Dog',
+            name: 'dog',
+          },
+        ],
       },
       {
         label: 'Name',

@@ -66,12 +66,22 @@ export default new Vuex.Store({
     petFields: [
       {
         label: 'Gender',
-        value: '',
+        value: 'male',
         type: 'toggle',
         component: 'toggle',
         className: '',
         validation: [
           'required',
+        ],
+        options: [
+          {
+            value: 'male',
+            label: 'Male',
+          },
+          {
+            value: 'female',
+            label: 'Female',
+          },
         ],
       },
       {

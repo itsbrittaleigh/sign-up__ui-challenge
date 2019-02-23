@@ -64,8 +64,8 @@ export default {
 };
 </script>
 
+<style scoped src="../../assets/styles/form-field.css"></style>
 <style scoped>
-@import '../../assets/styles/form-field.css';
 .FormField__input--toggle {
   display: flex;
   padding-left: 0;

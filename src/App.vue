@@ -13,10 +13,12 @@
         <PetInformation
           v-if="activeSection === 'petInformation'"
           @goToNextSection="setActiveSection(sections[2])"
+          @goToPreviousSection="setActiveSection(sections[0])"
         />
         <Review
           v-if="activeSection === 'review'"
           @goToNextSection="setActiveSection(sections[3])"
+          @goToPreviousSection="setActiveSection(sections[1])"
         />
         <Confirmation v-if="activeSection === 'confirmation'" />
       </div>

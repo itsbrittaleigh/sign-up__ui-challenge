@@ -1,3 +1,4 @@
+import { mapActions } from 'vuex';
 import Error from '../components/Error.vue';
 
 const FieldMixin = {
@@ -22,6 +23,11 @@ const FieldMixin = {
   },
   components: {
     Error,
+  },
+  methods: {
+    ...mapActions([
+      'updateFieldValue',
+    ]),
   },
   created() {
     this.localValue = this.field.value;

@@ -108,7 +108,9 @@ export default {
 }
 
 .FormField__label--toggle {
+  pointer-events: none;
   position: relative;
+  text-transform: lowercase;
   transition: 0.3s color 0.1s linear;
   z-index: 2;
 }

@@ -1,4 +1,5 @@
 .FormField {
+  margin-top: 10px;
   padding-top: 22px;
   position: relative;
   width: 100%;
@@ -58,4 +59,8 @@
   position: absolute;
   right: 10px;
   width: 0;
+}
+
+.FormField--select.FormField--filled:after {
+  border-top-color: var(--dark-gray);
 }

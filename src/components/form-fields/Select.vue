@@ -1,5 +1,12 @@
 <template>
-  <div class="FormField FormField--select">
+  <div
+    :class="`
+      FormField
+      FormField--select
+      ${field.className}
+      ${localValue ? 'FormField--filled' : ''}
+    `"
+  >
     <label
       :for="field.name"
       class="FormField__label"
@@ -9,6 +16,7 @@
     <select
       class="FormField__input"
       v-model="localValue"
+      @change="updateSelectValue(field)"
     >
       <option value=""></option>
       <option
@@ -28,6 +36,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import FieldMixin from '../../mixins/FieldMixin';
 
 export default {
@@ -35,6 +44,21 @@ export default {
   mixins: [
     FieldMixin,
   ],
+  methods: {
+    ...mapActions([
+      'setBreedOptions',
+    ]),
+    updateSelectValue(field) {
+      if (field.name === 'type') {
+        this.setBreedOptions(this.localValue);
+      }
+
+      this.updateFieldValue({
+        name: field.name,
+        value: this.localValue,
+      });
+    },
+  },
 };
 </script>
 

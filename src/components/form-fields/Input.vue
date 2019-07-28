@@ -10,6 +10,10 @@
       class="FormField__input"
       :type="field.type"
       v-model="localValue"
+      @change="updateFieldValue({
+        name: field.name,
+        value: localValue,
+      })"
     />
     <Error
       v-for="(error, index) in errors"

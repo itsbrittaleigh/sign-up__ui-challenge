@@ -1,6 +1,6 @@
 <template>
   <button
-    class="Button"
+    :class="`Button ${className}`"
     :type="type"
     @click="emitClicked()"
   >
@@ -12,6 +12,10 @@
 export default {
   name: 'Button',
   props: {
+    className: {
+      type: String,
+      default: '',
+    },
     text: {
       type: String,
       default: 'Next',
@@ -45,5 +49,9 @@ export default {
 
 .Button:hover {
   background: var(--dark-pink);
+}
+
+.Button.is-half {
+  width: 138px;
 }
 </style>
